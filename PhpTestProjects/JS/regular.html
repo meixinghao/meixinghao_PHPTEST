@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<p>JS 正则练习</p>
+<script type="text/javascript">
+    function test1() {
+        var version = navigator.appVersion;
+        //var result = version.split(' ');
+        console.log(version);
+        //console.log(result);
+        //console.log(result[0]);
+
+        var re1 = /iPhone/i;
+        console.log(version.search(re1));
+
+        var str = "hello wold, how are you, hello world"
+        var reg2 = /hello/i;
+
+        console.log(str.replace(reg2, "heihei"));
+        console.log(str);
+
+        console.log(version.match(/^\d\.\d*/gi, version));
+
+        console.log(version.search(/android/i));
+
+        var reg3 = /(\w+):\/\/([\w.]+)\/(\S*)/i;
+
+        var text = "Visit my blog at http://www.example.com/~meixinghao";
+
+        var result = text.match(reg3);
+        console.log(result);
+
+        var result1 = reg3.test(text);
+        console.log(result1);
+
+        var result2 = reg3.exec(text);
+        console.log(result2);
+    }
+
+    function test2() {
+        var version = navigator.appVersion;
+        console.log(version);
+        console.log(version.match(/^\d\.\d*/gi));
+    }
+    //    test2();
+
+    function test3() {
+        var reg = /src='(\S*)'/gi;
+        var str = "<st src='/dd/ff/ee'></st>dasdnajkdklajsdklajdslkadlksadlkjl<st src='/dd/ffh/ee'></st>dseeeeeepppp<st src='/dd/fhf/ee'></st>";
+        var result = str.match(reg);
+        console.log(result);
+        console.log(reg.exec(str));
+    }
+
+    test3();
+</script>
+</body>
+</html>
