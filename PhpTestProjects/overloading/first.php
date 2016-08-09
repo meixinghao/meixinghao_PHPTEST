@@ -1,5 +1,7 @@
 <?php
 
+//属性
+
 class PropertyTest
 {
     private $data = array();
