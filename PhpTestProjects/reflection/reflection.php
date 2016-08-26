@@ -3,45 +3,37 @@
 /**
  * Created by PhpStorm.
  * User: apple
- * Date: 16/8/24
- * Time: 11:23
+ * Date: 16/8/26
+ * Time: 21:03
  */
-
-/**
- * todo
- */
-class A
+class reflectionTest
 {
-    public $one = '';
-    public $two = '';
+    private $a = 1;
+    public $b = 1;
+    protected $c = 1;
 
     public function __construct()
     {
+
     }
 
-    #hello
-    public function echoOne()
+
+    public function A()
     {
-        echo $this->one . PHP_EOL;
+        echo "hello A";
     }
 
-    #world
-    public function echoTwo()
+    private function B()
     {
-        echo $this->two . PHP_EOL;
+        echo "hello B";
     }
 
-
+    protected function C()
+    {
+        echo "hello C";
+    }
 }
 
-$a = new A();
+$class = new Reflection('reflectionTest');
 
-$reflector = new ReflectionClass('A');
-
-$properties = $reflector->getProperties();
-
-print_r($properties);
-
-echo $reflector->getFileName() . PHP_EOL;
-echo $reflector->getDocComment() . PHP_EOL;
-echo $reflector->getEndLine() . PHP_EOL;
+print_r($class->getModifierNames(1));
