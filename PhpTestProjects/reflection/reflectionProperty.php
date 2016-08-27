@@ -8,8 +8,15 @@
  */
 class reflectionPropertyTest
 {
+    /**
+     * @var intfffffffffff
+     */
     private $a = 1;
     protected $b = 2;
+
+    /**
+     * @var intdsfsfdsfsdfds
+     */
     public $c = 3;
 
 
@@ -19,15 +26,28 @@ class reflectionPropertyTest
     }
 }
 
-$class = new ReflectionClass('reflectionPropertyTest');
-$property = $class->getProperty('a');
+$reflection_property = new ReflectionProperty('reflectionPropertyTest', 'a');
 
-$property->setAccessible(true);
+var_dump($reflection_property->export('reflectionPropertyTest', 'b', true));
 
-var_dump($property->isPrivate());
-var_dump($property->isProtected());
-$obj = new reflectionPropertyTest();
-echo $property->getValue($obj);
+var_dump($reflection_property->getDeclaringClass());
 
-print_r($class->getProperties());
-print_r($class->getName());
+var_dump($reflection_property->getDocComment());
+
+var_dump($reflection_property->getModifiers());
+
+var_dump($reflection_property->getName());
+
+$reflection_property_obj = new reflectionPropertyTest();
+$reflection_property->setAccessible(true);
+$reflection_property->setValue($reflection_property_obj, 100000);
+
+echo $reflection_property->getValue($reflection_property_obj) . "/////";
+
+var_dump($reflection_property->isPrivate());
+var_dump($reflection_property->isDefault());
+var_dump($reflection_property->isPublic());
+var_dump($reflection_property->isProtected());
+var_dump($reflection_property->isStatic());
+
+echo $reflection_property;
