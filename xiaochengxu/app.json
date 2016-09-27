@@ -1,12 +1,33 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "微信小程序测试",
-    "navigationBarTextStyle":"black"
-  }
+    "pages": [
+        "page/component/component-pages/view/view",
+        "page/component/component-pages/button/button"
+    ],
+    
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "小程序测试",
+        "navigationBarBackgroundColor": "#fbf9fe",
+        "backgroundColor": "#fbf9fe",
+        "enablePullDownRefresh": true
+    },
+
+    "tabBar": {
+        "color": "#dddddd",
+        "selectedColor": "#3cc51f",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [{
+            "pagePath": "page/component/component-pages/view/view",
+            "iconPath": "page/image/icon_component.png",
+            "selectedIconPath": "page/image/icon_component_HL.png",
+            "text": "缘分"
+        }, {
+            "pagePath": "page/component/component-pages/button/button",
+            "iconPath": "page/image/icon_API.png",
+            "selectedIconPath": "page/image/icon_API_HL.png",
+            "text": "测试"
+        }]
+    },
+    "debug": true
 }
